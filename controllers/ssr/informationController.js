@@ -87,7 +87,7 @@ const storeInformation = async (req, res) => {
     return res.redirect(`/user/retrieve?email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`);
 
   } catch (error) {
-    console.error("Error in storeInformation:", error);
+    console.error("Error in storeInformation:", error.message, error.stack);
     res.status(500).json({
       status: "error",
       message: "An error occurred while processing your request",
