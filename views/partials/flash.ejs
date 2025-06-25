@@ -1,0 +1,15 @@
+<% if (flash) { %>
+  <div
+    class="alert alert-<%= flash.type === 'error' ? 'danger' : 'success' %> alert-dismissible fade show fixed-top w-75 mx-auto text-center mt-3 shadow"
+    role="alert"
+  >
+    <%= flash.message %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+  <script>
+    setTimeout(() => {
+      const a = document.querySelector('.alert');
+      if (a) a.remove();
+    }, 5000);
+  </script>
+<% } %>
